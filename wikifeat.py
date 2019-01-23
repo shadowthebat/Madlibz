@@ -31,14 +31,7 @@ def question():
         print('You lose, game over.')
 
 
-if quotes[0][1:-1] == title:  # if wiki articles title is in quotation marks
-    newp = p[len(thtml.text)+2:]  # creates paragraph without title
-    blankspace = '_'*len(title)  # creates blankspace appropriate in length to missing title
-    print(f'\"{blankspace}\"{newp}')
-    print()
-    question()
-else:
-    newp = p[len(thtml.text):]  # creates paragraph without title
-    blankspace = '_'*len(title)  # creates blankspace appropriate in length to missing title
-    print(f'{blankspace}{newp}')
-    question()
+newp = p[len(thtml.text):]  # creates paragraph without title
+blankspace = '_'*len(title)  # creates blankspace appropriate in length to missing title
+print(f'{blankspace}{newp}')
+question()
