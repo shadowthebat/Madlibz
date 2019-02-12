@@ -15,10 +15,6 @@ thtml = divp.b  # title tags
 
 title = thtml.text  # title
 
-
-quotes = re.findall(r'"[^"]*"', p)
-
-
 def question():
     answer = input('Fill in the blank: ')
     lst = [title]
@@ -30,8 +26,7 @@ def question():
     else:
         print('You lose, game over.')
 
-
-newp = p[len(thtml.text):]  # creates paragraph without title
 blankspace = '_'*len(title)  # creates blankspace appropriate in length to missing title
-print(f'{blankspace}{newp}')
+newp = p.replace(title, blankspace) # replaces title with blankspace
+print(newp)
 question()
